@@ -16,10 +16,19 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User user;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "item_id")
-    private List<Item> item;
 
+
+    @ManyToMany
+    @JoinTable(name = "order_detail",joinColumns = @JoinColumn(name = "product_id"))
+    private List<Product> order;
+
+    public List<Product> getOrder() {
+        return order;
+    }
+
+    public void setOrder(List<Product> order) {
+        this.order = order;
+    }
 
     public int getId() {
         return id;
@@ -37,11 +46,5 @@ public class Order {
         this.user = user;
     }
 
-    public List<Item> getItem() {
-        return item;
-    }
 
-    public void setItem(List<Item> item) {
-        this.item = item;
-    }
 }

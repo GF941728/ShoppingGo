@@ -1,11 +1,11 @@
 package com.shoppingmall.shoppingmall.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@Table(name = "item")
-public class Item {
-
+@Table(name = "Product")
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,11 +17,19 @@ public class Item {
     @Column(name = "price")
     private int price;
 
-    @Column(name = "amount")
-    private int amount;
+    @ManyToMany(mappedBy = "order")
+    private List<Order> orderList;
 
-    @Column(name = "description")
-    private String description;
+    @OneToMany(mappedBy = "product_id", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<Product_discuss> productDiscussList;
+
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
+    }
 
     public int getId() {
         return id;
@@ -45,21 +53,5 @@ public class Item {
 
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 }
