@@ -1,4 +1,4 @@
-package com.wesley.mall;
+package com.shopping.mall;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
