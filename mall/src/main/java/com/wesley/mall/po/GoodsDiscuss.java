@@ -1,4 +1,4 @@
-package po;
+package com.wesley.mall.po;
 
 public class GoodsDiscuss {
 }
