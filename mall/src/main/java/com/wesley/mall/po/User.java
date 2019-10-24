@@ -27,7 +27,9 @@ public class User {
     @Column(name = "phone")
     private int phone;
 
-    @OneToMany(mappedBy = "user_id", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+
+    @ManyToMany
+    @JoinTable(name = "order_detail", joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "order_id"))
     private List<Order> orderList;
 
     public int getId() {
