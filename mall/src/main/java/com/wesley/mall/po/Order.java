@@ -13,7 +13,7 @@ public class Order {
 
 
     @ManyToMany(mappedBy = "orderList")
-    private List<User> userList;
+    private List<Goods> goodsList;
 
 
     public int getId() {
@@ -24,5 +24,11 @@ public class Order {
         this.id = id;
     }
 
+    public List<Goods> getGoodsList() {
+        return goodsList;
+    }
 
+    public void setGoodsList(List<Goods> goodsList) {
+        this.goodsList = goodsList;
+    }
 }

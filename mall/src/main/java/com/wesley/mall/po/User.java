@@ -28,9 +28,7 @@ public class User {
     private int phone;
 
 
-    @ManyToMany
-    @JoinTable(name = "order_detail", joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "order_id"))
-    private List<Order> orderList;
+
 
     public int getId() {
         return id;
@@ -72,11 +70,5 @@ public class User {
         this.phone = phone;
     }
 
-    public List<Order> getOrderList() {
-        return orderList;
-    }
 
-    public void setOrderList(List<Order> orderList) {
-        this.orderList = orderList;
-    }
 }
