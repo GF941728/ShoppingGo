@@ -74,19 +74,5 @@ public class User {
         this.phone = phone;
     }
 
-    public List<GoodsDiscuss> getGoodsDiscussList() {
-        return goodsDiscussList;
-    }
 
-    public void setGoodsDiscussList(List<GoodsDiscuss> goodsDiscussList) {
-        this.goodsDiscussList = goodsDiscussList;
-    }
-
-    public List<Order> getOrderList() {
-        return orderList;
-    }
-
-    public void setOrderList(List<Order> orderList) {
-        this.orderList = orderList;
-    }
 }

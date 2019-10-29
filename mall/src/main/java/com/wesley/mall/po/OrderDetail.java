@@ -21,21 +21,6 @@ public class OrderDetail implements Serializable {
     @Column(name = "amount")
     private int amount;
 
-    public Goods getGoodsDetail() {
-        return goodsDetail;
-    }
-
-    public void setGoodsDetail(Goods goodsDetail) {
-        this.goodsDetail = goodsDetail;
-    }
-
-    public Order getOrderDetail() {
-        return orderDetail;
-    }
-
-    public void setOrderDetail(Order orderDetail) {
-        this.orderDetail = orderDetail;
-    }
 
     public int getAmount() {
         return amount;

@@ -55,21 +55,6 @@ public class Goods {
         return description;
     }
 
-    public List<GoodsDiscuss> getGoodsDiscussList() {
-        return goodsDiscussList;
-    }
-
-    public void setGoodsDiscussList(List<GoodsDiscuss> goodsDiscussList) {
-        this.goodsDiscussList = goodsDiscussList;
-    }
-
-    public List<OrderDetail> getOrderDetailList() {
-        return orderDetailList;
-    }
-
-    public void setOrderDetailList(List<OrderDetail> orderDetailList) {
-        this.orderDetailList = orderDetailList;
-    }
 
     public void setDescription(String description) {
         this.description = description;

@@ -30,21 +30,6 @@ public class Order {
         this.id = id;
     }
 
-    public List<OrderDetail> getOrderDetailList() {
-        return orderDetailList;
-    }
-
-    public void setOrderDetailList(List<OrderDetail> orderDetailList) {
-        this.orderDetailList = orderDetailList;
-    }
-
-    public User getOrderUserId() {
-        return orderUserId;
-    }
-
-    public void setOrderUserId(User orderUserId) {
-        this.orderUserId = orderUserId;
-    }
 
     public int getTotalPrice() {
         return totalPrice;

@@ -29,11 +29,5 @@ public class GoodsDiscuss {
         this.id = id;
     }
 
-    public User getGoodsDiscussUser() {
-        return goodsDiscussUser;
-    }
 
-    public void setGoodsDiscussUser(User goodsDiscussUser) {
-        this.goodsDiscussUser = goodsDiscussUser;
-    }
 }

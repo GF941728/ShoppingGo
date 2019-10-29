@@ -3,12 +3,13 @@ package com.wesley.mall.service;
 
 import com.wesley.mall.model.GoodsModel;
 import com.wesley.mall.po.Goods;
+import com.wesley.mall.response.GoodsResponse;
 
 import java.util.List;
 
 public interface GoodsService {
 
-    GoodsModel insertGoods(GoodsModel goodsModel);
+    GoodsResponse insertGoods(GoodsModel goodsModel);
 
     List<Goods> findByName(String goodsName);
 

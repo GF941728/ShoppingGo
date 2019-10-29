@@ -3,6 +3,7 @@ package com.wesley.mall.serviceimpl;
 import com.wesley.mall.model.GoodsModel;
 import com.wesley.mall.po.Goods;
 import com.wesley.mall.repository.GoodsRepository;
+import com.wesley.mall.response.GoodsResponse;
 import com.wesley.mall.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +18,18 @@ public class GoodsServiceImpl implements GoodsService {
 
 
     @Override
-    public GoodsModel insertGoods(GoodsModel goodsModel) {
-        return goodsModel.toString();
+    public GoodsResponse insertGoods(GoodsModel goodsModel) {
+        Goods goods = new Goods();
+        GoodsResponse goodsResponse = new GoodsResponse();
+        goods.setName(goodsModel.getName());
+        goods.setPrice(goodsModel.getPrice());
+        goods.setDescription(goodsModel.getDescription());
+        goodsRepository.save(goods);
+
+        goodsResponse.setGoods(goods);
+        goodsResponse.setSuccess(true);
+
+        return goodsResponse;
     }
 
     @Override

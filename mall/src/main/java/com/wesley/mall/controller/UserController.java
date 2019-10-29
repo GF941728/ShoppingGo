@@ -13,7 +13,7 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping(name = "/user/login")
+    @PostMapping(value = "/user/login")
     public boolean login(UserModel userModel) throws NullPointerException {
 
         if (userModel.getUserName() == null || userModel.getUserName().isEmpty() || userModel.getPassword() == null || userModel.getPassword().isEmpty()) {
@@ -22,7 +22,7 @@ public class UserController {
             return userService.isUserExist(userModel);
     }
 
-    @PostMapping(name = "/user/createUser")
+    @PostMapping(value = "/user/createUser")
     public UserResponse createUser(UserModel userModel){
         return userService.createUser(userModel);
     }
