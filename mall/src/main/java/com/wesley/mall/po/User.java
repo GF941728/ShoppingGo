@@ -27,7 +27,11 @@ public class User {
     @Column(name = "phone")
     private int phone;
 
+    @OneToMany(mappedBy = "goodsDiscussUser", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<GoodsDiscuss> goodsDiscussList;
 
+    @OneToMany(mappedBy = "orderUserId", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Order> orderList;
 
 
     public int getId() {
@@ -70,5 +74,19 @@ public class User {
         this.phone = phone;
     }
 
+    public List<GoodsDiscuss> getGoodsDiscussList() {
+        return goodsDiscussList;
+    }
 
+    public void setGoodsDiscussList(List<GoodsDiscuss> goodsDiscussList) {
+        this.goodsDiscussList = goodsDiscussList;
+    }
+
+    public List<Order> getOrderList() {
+        return orderList;
+    }
+
+    public void setOrderList(List<Order> orderList) {
+        this.orderList = orderList;
+    }
 }

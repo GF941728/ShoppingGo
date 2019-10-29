@@ -11,9 +11,15 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @OneToMany(mappedBy = "orderDetail", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<OrderDetail> orderDetailList;
 
-    @ManyToMany(mappedBy = "orderList")
-    private List<Goods> goodsList;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User orderUserId;
+
+    @Column(name = "total_price")
+    private int totalPrice;
 
 
     public int getId() {
@@ -24,11 +30,27 @@ public class Order {
         this.id = id;
     }
 
-    public List<Goods> getGoodsList() {
-        return goodsList;
+    public List<OrderDetail> getOrderDetailList() {
+        return orderDetailList;
     }
 
-    public void setGoodsList(List<Goods> goodsList) {
-        this.goodsList = goodsList;
+    public void setOrderDetailList(List<OrderDetail> orderDetailList) {
+        this.orderDetailList = orderDetailList;
+    }
+
+    public User getOrderUserId() {
+        return orderUserId;
+    }
+
+    public void setOrderUserId(User orderUserId) {
+        this.orderUserId = orderUserId;
+    }
+
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
     }
 }

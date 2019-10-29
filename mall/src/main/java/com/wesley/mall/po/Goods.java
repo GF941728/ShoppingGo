@@ -20,9 +20,12 @@ public class Goods {
     @Column(name = "description")
     private String description;
 
-    @ManyToMany
-    @JoinTable(name = "order_detail",joinColumns = @JoinColumn(name = "goods_id"),inverseJoinColumns = @JoinColumn(name = "order_id"))
-    private List<Order> orderList;
+    @OneToMany(mappedBy = "goodsDiscussName", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<GoodsDiscuss> goodsDiscussList;
+
+    @OneToMany(mappedBy = "goodsDetail", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<OrderDetail> orderDetailList;
+
 
     public int getId() {
         return id;
@@ -52,15 +55,26 @@ public class Goods {
         return description;
     }
 
+    public List<GoodsDiscuss> getGoodsDiscussList() {
+        return goodsDiscussList;
+    }
+
+    public void setGoodsDiscussList(List<GoodsDiscuss> goodsDiscussList) {
+        this.goodsDiscussList = goodsDiscussList;
+    }
+
+    public List<OrderDetail> getOrderDetailList() {
+        return orderDetailList;
+    }
+
+    public void setOrderDetailList(List<OrderDetail> orderDetailList) {
+        this.orderDetailList = orderDetailList;
+    }
+
     public void setDescription(String description) {
         this.description = description;
-    }
 
-    public List<Order> getOrderList() {
-        return orderList;
-    }
-
-    public void setOrderList(List<Order> orderList) {
-        this.orderList = orderList;
     }
 }
+
+

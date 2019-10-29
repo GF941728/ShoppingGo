@@ -1,5 +1,6 @@
 package com.wesley.mall.controller;
 
+import com.wesley.mall.model.GoodsModel;
 import com.wesley.mall.po.Goods;
 import com.wesley.mall.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,24 +14,21 @@ public class GoodsController {
     @Autowired
     GoodsService goodsService;
 
-    @PostMapping(name = "/goods/insertGoods")
-    public Goods insertGoods(Goods goods){
-        return goodsService.insertGoods(goods);
-    }
+
 
     @GetMapping(name = "/goods/findByName")
     public List<Goods> find(String name){
         return goodsService.findByName(name);
     }
 
-    @GetMapping(name = "/goods/getAll")
-    public List<Goods> getAll(){
-        return goodsService.getAll();
+    @PostMapping(name = "/goods/insertGoods")
+    public Goods insertGoods(GoodsModel goodsModel){
+        return goodsModel.
     }
 
     @PutMapping(name = "/goods/editGoods")
-    public Goods editGoods(int id){
-        return goodsService.editGoods(id);
+    public Goods editGoods(Goods goods){
+        return goodsService.editGoods(goods);
     }
 
     @DeleteMapping("/goods/deleteGoods")

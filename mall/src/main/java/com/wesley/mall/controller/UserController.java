@@ -1,6 +1,7 @@
 package com.wesley.mall.controller;
 
 import com.wesley.mall.model.UserModel;
+import com.wesley.mall.response.UserResponse;
 import com.wesley.mall.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,4 +21,10 @@ public class UserController {
         }
             return userService.isUserExist(userModel);
     }
+
+    @PostMapping(name = "/user/createUser")
+    public UserResponse createUser(UserModel userModel){
+        return userService.createUser(userModel);
+    }
+
 }

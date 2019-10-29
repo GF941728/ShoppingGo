@@ -1,5 +1,6 @@
 package com.wesley.mall.serviceimpl;
 
+import com.wesley.mall.model.GoodsModel;
 import com.wesley.mall.po.Goods;
 import com.wesley.mall.repository.GoodsRepository;
 import com.wesley.mall.service.GoodsService;
@@ -14,16 +15,11 @@ public class GoodsServiceImpl implements GoodsService {
     @Autowired
     GoodsRepository goodsRepository;
 
-    @Override
-    public Goods insertGoods(Goods goods) {
-        return goodsRepository.save(goods);
-    }
 
     @Override
-    public List<Goods> getAll() {
-        return goodsRepository.findAll();
+    public GoodsModel insertGoods(GoodsModel goodsModel) {
+        return goodsModel.toString();
     }
-
 
     @Override
     public List<Goods> findByName(String goodsName) {
@@ -31,13 +27,20 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public Goods editGoods(int id) {
-        return null;
+    public Goods editGoods(Goods goods) {
+        return goodsRepository.save(goods);
     }
 
     @Override
     public boolean deleteGoods(int id) {
-        return false;
+        boolean success = false;
+        try {
+            goodsRepository.deleteById(id);
+            success = true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return success;
     }
 
 }
