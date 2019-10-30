@@ -29,4 +29,20 @@ public class OrderDetail implements Serializable {
     public void setAmount(int amount) {
         this.amount = amount;
     }
+
+    public Goods getGoodsDetail() {
+        return goodsDetail;
+    }
+
+    public void setGoodsDetail(Goods goodsDetail) {
+        this.goodsDetail = goodsDetail;
+    }
+
+    public Order getOrderDetail() {
+        return orderDetail;
+    }
+
+    public void setOrderDetail(Order orderDetail) {
+        this.orderDetail = orderDetail;
+    }
 }

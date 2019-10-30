@@ -1,10 +1,11 @@
 package com.wesley.mall.po;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "goods_discuss")
-public class GoodsDiscuss {
+public class GoodsDiscuss implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,5 +30,27 @@ public class GoodsDiscuss {
         this.id = id;
     }
 
+    public Goods getGoodsDiscussName() {
+        return goodsDiscussName;
+    }
 
+    public void setGoodsDiscussName(Goods goodsDiscussName) {
+        this.goodsDiscussName = goodsDiscussName;
+    }
+
+    public User getGoodsDiscussUser() {
+        return goodsDiscussUser;
+    }
+
+    public void setGoodsDiscussUser(User goodsDiscussUser) {
+        this.goodsDiscussUser = goodsDiscussUser;
+    }
+
+    public String getGoodsDiscussion() {
+        return goodsDiscussion;
+    }
+
+    public void setGoodsDiscussion(String goodsDiscussion) {
+        this.goodsDiscussion = goodsDiscussion;
+    }
 }

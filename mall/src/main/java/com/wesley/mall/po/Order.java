@@ -1,11 +1,12 @@
 package com.wesley.mall.po;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "user_order")
-public class Order {
+public class Order implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +21,9 @@ public class Order {
 
     @Column(name = "total_price")
     private int totalPrice;
+
+    @Column(name = "address")
+    private String address;
 
 
     public int getId() {
@@ -37,5 +41,29 @@ public class Order {
 
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public List<OrderDetail> getOrderDetailList() {
+        return orderDetailList;
+    }
+
+    public void setOrderDetailList(List<OrderDetail> orderDetailList) {
+        this.orderDetailList = orderDetailList;
+    }
+
+    public User getOrderUserId() {
+        return orderUserId;
+    }
+
+    public void setOrderUserId(User orderUserId) {
+        this.orderUserId = orderUserId;
     }
 }
