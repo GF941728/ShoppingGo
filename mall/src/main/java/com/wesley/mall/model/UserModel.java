@@ -12,7 +12,7 @@ public class UserModel {
 
     private String realName;
 
-    private int phone;
+    private String phone;
 
     public String getUserName() {
         return userName;
@@ -38,11 +38,12 @@ public class UserModel {
         this.realName = realName;
     }
 
-    public int getPhone() {
+
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 }

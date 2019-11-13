@@ -4,6 +4,7 @@ package com.wesley.mall.po;
 import javax.persistence.*;
 import java.io.Serializable;
 
+@IdClass(OrderDetail.class)
 @Entity
 @Table(name = "order_detail")
 public class OrderDetail implements Serializable {

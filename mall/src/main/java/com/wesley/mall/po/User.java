@@ -26,7 +26,7 @@ public class User implements Serializable {
     private String realName;
 
     @Column(name = "phone")
-    private int phone;
+    private String  phone;
 
     @OneToMany(mappedBy = "goodsDiscussUser", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<GoodsDiscuss> goodsDiscussList;
@@ -67,11 +67,11 @@ public class User implements Serializable {
         this.realName = realName;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

@@ -18,23 +18,25 @@ public class GoodsController {
 
 
     @GetMapping(value = "/goods/findByName")
-    public List<Goods> find(String name){
+    public List<Goods> find(@RequestParam String name){
         return goodsService.findByName(name);
     }
 
     @PostMapping(value = "/goods/insertGoods")
-    public GoodsResponse insertGoods(GoodsModel goodsModel){
+    public GoodsResponse insertGoods(@RequestBody GoodsModel goodsModel){
         return goodsService.insertGoods(goodsModel);
     }
 
     @PutMapping(value = "/goods/editGoods")
-    public Goods editGoods(Goods goods){
+    public Goods editGoods(@RequestBody Goods goods){
         return goodsService.editGoods(goods);
     }
 
     @DeleteMapping("/goods/deleteGoods")
-    public boolean deleteGoods(int id){
+    public boolean deleteGoods(@RequestParam int id){
         return goodsService.deleteGoods(id);
     }
+
+
 
 }
